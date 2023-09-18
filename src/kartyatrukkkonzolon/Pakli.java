@@ -1,13 +1,34 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package kartyatrukkkonzolon;
 
-/**
- *
- * @author mogyorodi.balazs
- */
 public class Pakli {
-    
+
+    public Pakli() {
+        feltolt();
+
+    }
+
+    private void feltolt() {
+        String[] szinek = {"P", "T", "Z", "M"};
+        String[] ertekek = {"Ász", "Kir", "Fel", "X", "IX", "VIII"};
+        for (String szin : szinek) {
+            for (int e = 0; e < ertekek.length; e++) {
+                String lapTartalom = szin + "_" + ertekek[e];
+                new Lap(lapTartalom);
+            }
+        }
+
+    }
+
+    private void kirak() {
+
+    }
+
+    private void (int oszlopp) {
+
+    }
+
+    private void ezVolt() {
+
+    }
+
 }

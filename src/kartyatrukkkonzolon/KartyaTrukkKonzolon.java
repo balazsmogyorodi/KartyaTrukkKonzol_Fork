@@ -8,6 +8,9 @@ public class KartyaTrukkKonzolon {
     private static final Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
+        new Pakli();
+        
+        
         feltolt();
         for (int i = 0; i < 3; i++) {
             kirak();
@@ -26,7 +29,6 @@ public class KartyaTrukkKonzolon {
                 pakli[i++] = szin + "_" + ertekek[e];
             }
         }
-
     }
     
     private static void kirak() {
