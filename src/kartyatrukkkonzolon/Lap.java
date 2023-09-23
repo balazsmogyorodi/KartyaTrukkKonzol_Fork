@@ -13,9 +13,6 @@ public class Lap {
         return leiras;
     }
 
-    void add(String leiras) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
     
     
     
