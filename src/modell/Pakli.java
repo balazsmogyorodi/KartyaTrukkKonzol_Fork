@@ -2,13 +2,22 @@ package modell;
 
 public class Pakli {
 
+    private String[] pakli = new String[22];
 
-    public Pakli() {
-        
+    public String[] getPakli() {
+        return pakli;
     }
 
-    public String[] feltolt() {
-        String[] pakli = new String[22];
+    public void setPakli(String[] pakli) {
+        this.pakli = pakli;
+    }
+
+    public Pakli() {
+        feltolt();
+    }
+
+    private void feltolt() {
+        String[] pakli = this.pakli;
         String[] szinek = {"P", "T", "Z", "M"};
         String[] ertekek = {"Ász", "Kir", "Fel", "X", "IX", "VIII"};
         int i = 1;
@@ -19,21 +28,21 @@ public class Pakli {
                 i++;
             }
         }
-        return pakli;
+        setPakli(pakli);
     }
 
-    public void kirak(String [] pakli) {
-        System.out.println("pakli\n");
+    public void kirak(String[] pakli) {
+        System.out.println("\n" + "pakli");
         for (int i = 1; i < pakli.length; i++) {
-            System.out.printf("%-8s",pakli[i]);
+            System.out.printf("%-8s", pakli[i]);
             if (i % 3 == 0) {
                 System.out.println("");
             }
         }
-        
+
     }
 
-    public String[] kever(int oszlop, String[] pakli) {
+    public void kever(int oszlop) {
         String[] ujPakli = new String[22];
         switch (oszlop) {
             case 1:
@@ -46,7 +55,7 @@ public class Pakli {
             case 2:
 
                 for (int i = 1; i <= 7; i++) {
-                    ujPakli[i-1] = pakli[19 - (i - 1) * 3];
+                    ujPakli[i] = pakli[19 - (i - 1) * 3];
                     ujPakli[i + 7] = pakli[20 - (i - 1) * 3];
                     ujPakli[i + 14] = pakli[21 - (i - 1) * 3];
                 }
@@ -59,16 +68,12 @@ public class Pakli {
                 }
                 break;
         }
-        return ujPakli;
+        setPakli(ujPakli);
     }
 
-    
-    
-    
-
     public String ezVolt(String[] pakli) {
-        return  pakli[11] ;
-        
+        return pakli[11];
+
     }
 
 }

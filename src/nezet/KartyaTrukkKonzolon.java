@@ -5,11 +5,15 @@ import java.util.Scanner;
 
 public class KartyaTrukkKonzolon {
 
+    private Pakli obj;
+    private String[] pakli;
+
     private static final Scanner sc = new Scanner(System.in);
 
-    public KartyaTrukkKonzolon(String[] pakli, Pakli obj) {
-        inditas(pakli, obj);
-       
+    public KartyaTrukkKonzolon(Pakli obj) {
+        this.obj = obj;
+        this.pakli = this.obj.getPakli();
+        inditas();
     }
 
     private int melyik() {
@@ -21,15 +25,17 @@ public class KartyaTrukkKonzolon {
             jo = oszlop >= 1 && oszlop <= 3;
         } while (!jo);
         return oszlop;
-
     }
 
-    private void inditas(String[] pakli, Pakli obj) {
+    private void inditas() {
         obj.kirak(pakli);
         for (int i = 0; i < 3; i++) {
             int oszlop = melyik();
-            pakli = obj.kever(oszlop, pakli);
+            obj.kever(oszlop);
+            pakli = obj.getPakli();
             obj.kirak(pakli);
         }
-        obj.ezVolt(pakli); }
+        String ez = obj.ezVolt(pakli);
+        System.out.println("A kártya, ami középen van a(z) " + ez);
+    }
 }
