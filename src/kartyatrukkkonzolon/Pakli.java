@@ -4,6 +4,7 @@ public class Pakli {
 
     public Pakli() {
         feltolt();
+        kirak();
 
     }
 
@@ -20,6 +21,9 @@ public class Pakli {
     }
 
     private void kirak() {
+        
+        
+
 
     }
 
