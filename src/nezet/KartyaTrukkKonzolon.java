@@ -1,5 +1,6 @@
-package kartyatrukkkonzolon;
+package nezet;
 
+import modell.Pakli;
 import java.util.Scanner;
 
 public class KartyaTrukkKonzolon {
@@ -7,7 +8,7 @@ public class KartyaTrukkKonzolon {
     //  private static String[] pakli = new String[22];
     private static final Scanner sc = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public  KartyaTrukkKonzolon() {
         indit();
     }
 

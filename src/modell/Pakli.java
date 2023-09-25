@@ -1,4 +1,4 @@
-package kartyatrukkkonzolon;
+package modell;
 
 public class Pakli {
 
@@ -22,11 +22,10 @@ public class Pakli {
     private void feltolt() {
         String[] szinek = {"P", "T", "Z", "M"};
         String[] ertekek = {"Ász", "Kir", "Fel", "X", "IX", "VIII"};
-        int i = 1;
+        int i = 0;
         for (String szin : szinek) {
             for (int e = 0; e < ertekek.length && i < pakli.length; e++) {
-                String lapTartalom = szin + "_" + ertekek[e];
-                Lap lap = new Lap(lapTartalom);
+                Lap lap = new Lap(szin + "_" + ertekek[e]);
                 pakli[i] = lap.getLeiras();
                 i++;
             }
@@ -35,7 +34,7 @@ public class Pakli {
 
     private void kirak() {
         System.out.println("pakli");
-        for (int i = 1; i < pakli.length; i++) {
+        for (int i = 0; i < pakli.length; i++) {
             System.out.printf("%-8s", pakli[i]);
             if (i % 3 == 0) {
                 System.out.println("");
